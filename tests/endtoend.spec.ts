@@ -10,11 +10,11 @@ test("Verification of end to end scenrio",async({page})=>{
     await page.locator("input[value='Find Flights']").click();
 
     let priceArray:any[] = [];
+    await page.waitForTimeout(2000)
     const rows :Locator[] =await page.locator("table.table tr").all();
-
+    await page.waitForTimeout(2000)
     for(const row of rows.slice(1)){
      const datas = await row.locator("td").all();
-
      for(const data of datas){
         const val:string=await data.innerText();
         if(val.includes("$")){
@@ -29,8 +29,8 @@ test("Verification of end to end scenrio",async({page})=>{
     console.log(sorted)
     let minValue = "$"+Math.min(...sorted);
     console.log("Minimum value is ",minValue)
-    await page.waitForTimeout(5000)
     await page.locator(`//td[contains(text(),'${minValue}')]/preceding-sibling::td/input[@type='submit']`).click();
+    await page.waitForTimeout(5000)
     await page.locator("input#inputName").fill("Darshan")
     await page.locator("input#address").fill("1234 ave")
     await page.locator("input#city").fill("San Diego")
