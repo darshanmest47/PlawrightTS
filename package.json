@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "npx playwright test tests/PlaywrightGroupsHooks/annotations.spec.ts --headed --project chromium",
+    "dev1": "npx playwright test tests/PlaywrightGroupsHooks/hooks.spec.ts --headed --project chromium",
+    "_comment1": "Automatically adds the test steps & locators etc in the directory testsPlaywrightGroupsHooks/teststeps.spec.ts",
+    "codegen": "npx playwright codegen -o testsPlaywrightGroupsHooks/teststeps.spec.ts",
+    "group": "npx playwright test --grep \"Cart Functionality\" --headed --project chromium",
+    "smoke": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep \"@smoke\"",
+    "regression": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep \"@regression\"",
+    "ortags": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep \"@smoke|@regression\"",
+    "andtags": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep \"(?=.*@smoke)(?=.*@regression)\""
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
