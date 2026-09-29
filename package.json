@@ -12,13 +12,21 @@
     "smoke": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep \"@smoke\"",
     "regression": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep \"@regression\"",
     "ortags": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep \"@smoke|@regression\"",
-    "andtags": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep \"(?=.*@smoke)(?=.*@regression)\""
+    "andtags": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep \"(?=.*@smoke)(?=.*@regression)\"",
+    "invert": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep-invert \"@smoke\"",
+    "arrayparameterization": "npx playwright test --grep \"Data driven testing using array\"",
+    "jsonparameterization": "npx playwright test --grep \"Reading from json file\"",
+    "csvparameterization": "npx playwright test --grep \"Reading from csv file\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.8.0"
+    "@types/node": "^25.9.8"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.3",
+    "xlsx": "^0.18.5"
   }
 }
