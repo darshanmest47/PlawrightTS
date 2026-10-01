@@ -16,7 +16,8 @@
     "invert": "npx playwright test tests/PlaywrightGroupsHooks/tags.spec.ts --project chromium --grep-invert \"@smoke\"",
     "arrayparameterization": "npx playwright test --grep \"Data driven testing using array\"",
     "jsonparameterization": "npx playwright test --grep \"Reading from json file\"",
-    "csvparameterization": "npx playwright test --grep \"Reading from csv file\""
+    "csvparameterization": "npx playwright test --grep \"Reading from csv file\"",
+    "excelparameterization": "npx playwright test --grep \"Data driven testing using xlsx\" --project chromium"
   },
   "keywords": [],
   "author": "",
